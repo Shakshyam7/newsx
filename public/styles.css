@@ -18,6 +18,7 @@ p {
 }
 
 .sidebar {
+  width: 20vw;
   height: 100vh;
 }
 .sidebar .hamburger {
@@ -32,4 +33,5 @@ p {
 }
 .nav_ul li:hover {
   background-color: rgb(66, 61, 61);
+  border-radius: 12px;
 }/*# sourceMappingURL=styles.css.map */

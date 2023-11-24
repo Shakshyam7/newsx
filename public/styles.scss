@@ -17,6 +17,7 @@ p {
   padding: 0;
 }
 .sidebar {
+  width: 20vw;
   height: 100vh;
   .hamburger {
     cursor: pointer;
@@ -30,6 +31,7 @@ p {
     cursor: pointer;
     &:hover {
       background-color: rgb(66, 61, 61);
+      border-radius: 12px;
     }
   }
 }
