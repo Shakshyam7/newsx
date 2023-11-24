@@ -20,4 +20,16 @@ p {
 .sidebar {
   height: 100vh;
 }
-/*# sourceMappingURL=styles.css.map */
+.sidebar .hamburger {
+  cursor: pointer;
+}
+.sidebar nav {
+  margin-top: 1rem;
+}
+
+.nav_ul li {
+  cursor: pointer;
+}
+.nav_ul li:hover {
+  background-color: rgb(66, 61, 61);
+}/*# sourceMappingURL=styles.css.map */
