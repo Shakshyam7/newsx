@@ -18,14 +18,20 @@ p {
 }
 
 .sidebar {
-  width: 20vw;
   height: 100vh;
-}
-.sidebar .hamburger {
-  cursor: pointer;
 }
 .sidebar nav {
   margin-top: 1rem;
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.nav_bar {
+  display: flex;
+  position: static;
+  top: 0;
 }
 
 .nav_ul li {

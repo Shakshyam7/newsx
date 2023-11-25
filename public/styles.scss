@@ -16,22 +16,3 @@ p {
   margin: 0;
   padding: 0;
 }
-.sidebar {
-  width: 20vw;
-  height: 100vh;
-  .hamburger {
-    cursor: pointer;
-  }
-  nav {
-    margin-top: 1rem;
-  }
-}
-.nav_ul {
-  li {
-    cursor: pointer;
-    &:hover {
-      background-color: rgb(66, 61, 61);
-      border-radius: 12px;
-    }
-  }
-}
