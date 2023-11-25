@@ -17,27 +17,33 @@ p {
   padding: 0;
 }
 
+header {
+  position: absolute;
+}
+
 .sidebar {
-  height: 100vh;
-}
-.sidebar nav {
-  margin-top: 1rem;
+  display: none;
 }
 
-.hamburger {
-  cursor: pointer;
-}
-
-.nav_bar {
-  display: flex;
-  position: static;
-  top: 0;
-}
-
-.nav_ul li {
-  cursor: pointer;
-}
-.nav_ul li:hover {
-  background-color: rgb(66, 61, 61);
-  border-radius: 12px;
+@media screen and (min-width: 992px) {
+  header {
+    height: 100vh;
+  }
+  .sidebar {
+    display: block;
+    position: relative;
+    color: white;
+    z-index: 999;
+  }
+  .sidebar ul {
+    padding: 0;
+  }
+  .sidebar ul li {
+    cursor: pointer;
+    list-style-type: none;
+  }
+  .sidebar ul li:hover {
+    background-color: grey;
+    border-radius: 12px;
+  }
 }/*# sourceMappingURL=styles.css.map */

@@ -16,46 +16,32 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
   </head>
-  <body>
-    <header>
-      <div class="bg-dark text-light d-flex align-items-center p-2">
-        <div>
-          <i
-            class="bi bi-list display-6 hamburger mx-2"
-            data-bs-toggle="collapse"
-            data-bs-target="#sidebar"
-          ></i>
+  <body class="row mx-0">
+    <header class="bg-dark col-lg-3 c-header">
+      <div class="text-light d-flex align-items-center p-2">
+        <div class="d-lg-none">
+          <i class="bi bi-list display-6 hamburger mx-2"></i>
         </div>
         <div class="fs-1 mx-5">NewsX</div>
       </div>
+      <nav class="sidebar ">
+        <ul class="fs-5">
+          <li class="p-2 my-4">
+            <i class="bi bi-arrow-up-right-circle mx-2"></i> Trending
+          </li>
+          <li class="p-2 my-4">
+            <i class="bi bi-star-fill mx-2"></i> Recommended
+          </li>
+          <li class="p-2 my-4">
+            <i class="bi bi-bookmark-fill mx-2"></i> Saved
+          </li>
+        </ul>
+      </nav>
     </header>
-    <div class="row mx-0">
-      <!-- <div class=" sidebar text-light">
-        <div class="col d-md-none bg-dark">
-          <div
-            class="fs-1 d-md-none d-flex align-items-center w-100 text-light nav_bar"
-          >
-          </div>
-        </div>
-        <nav class="sidebar-nav" id="sidebar">
-          <ul class="navbar-nav fs-5 nav_ul">
-            <li class="nav-item m-3 p-2">
-              <i class="bi bi-arrow-up-right-circle mx-2"></i> Trending
-            </li>
-            <li class="nav-link m-3 p-2">
-              <i class="bi bi-star-fill mx-2"></i> Recommended
-            </li>
-            <li class="nav-link m-3 p-2">
-              <i class="bi bi-bookmark-fill mx-2"></i> Saved
-            </li>
-          </ul>
-        </nav>
-      </div> -->
-    </div>
 
-    <div>
+    <main class="col-lg-9 p-3">
       <h1>Latest</h1>
-    </div>
+    </main>
     <footer></footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

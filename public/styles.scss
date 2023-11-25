@@ -16,3 +16,32 @@ p {
   margin: 0;
   padding: 0;
 }
+header {
+  position: absolute;
+}
+.sidebar {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  header {
+    height: 100vh;
+  }
+  .sidebar {
+    display: block;
+    position: relative;
+    color: white;
+    z-index: 999;
+    ul {
+      padding: 0;
+      li {
+        cursor: pointer;
+        list-style-type: none;
+        &:hover {
+          background-color: grey;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+}
