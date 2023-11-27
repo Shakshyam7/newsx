@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   margin: 0;
   padding: 0;
 }
@@ -46,11 +46,16 @@ p {
     gap: 1rem;
   }
 }
+main {
+  padding: 0px;
+}
+
 @media screen and (min-width: 768px) {
   header {
     height: 100vh;
     width: 25% !important;
     position: fixed;
+    z-index: 2;
   }
   .sidebar {
     display: block;
@@ -63,6 +68,7 @@ p {
     margin-top: 2rem;
   }
   .c-carousel .carousel-inner img {
+    overflow: hidden;
     height: 400px;
     -o-object-fit: cover;
        object-fit: cover;
