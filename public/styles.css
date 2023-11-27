@@ -19,7 +19,6 @@ p {
 
 .hamburger {
   cursor: pointer;
-  align-items: flex-start;
 }
 
 .sidebar {
@@ -39,23 +38,35 @@ p {
   border-radius: 12px;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   header {
     height: 100vh;
-    width: 20% !important;
+    width: 25% !important;
     position: fixed;
   }
   .sidebar {
     display: block;
   }
   main {
-    margin-left: 20%;
-    width: 80% !important;
+    margin-left: 25%;
+    width: 75% !important;
   }
   .latest-news {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  header {
+    height: 100vh;
+    width: 20% !important;
+    position: fixed;
+  }
+  .latest-news {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 1rem;
   }
-} /*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
