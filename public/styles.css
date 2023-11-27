@@ -41,20 +41,20 @@ p {
 @media screen and (min-width: 992px) {
   header {
     height: 100vh;
-    width: 20%;
+    width: 20% !important;
     position: fixed;
   }
   .sidebar {
     display: block;
-    position: fixed;
-    left: 200px;
   }
   main {
-    margin-left: 25%;
+    margin-left: 20%;
+    width: 80% !important;
   }
   .latest-news {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    grid-template-rows: auto;
+    gap: 1rem;
   }
 }/*# sourceMappingURL=styles.css.map */
