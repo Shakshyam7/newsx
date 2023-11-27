@@ -2,8 +2,7 @@
 
 (() => {
   window.addEventListener('load', () => {
-
-    //variables 
+    //variables
     const hamMenu = document.querySelector('.hamburger');
 
     // toggles the sidebar in small device
