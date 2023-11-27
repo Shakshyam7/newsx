@@ -59,6 +59,15 @@ p {
     margin-left: 25%;
     width: 75% !important;
   }
+  .c-carousel {
+    margin-top: 2rem;
+  }
+  .c-carousel .carousel-inner img {
+    height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 12px;
+  }
 }
 @media screen and (min-width: 992px) {
   header {
