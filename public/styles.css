@@ -19,6 +19,7 @@ p {
 
 .hamburger {
   cursor: pointer;
+  align-items: flex-start;
 }
 
 .sidebar {
@@ -57,4 +58,4 @@ p {
     grid-template-rows: auto;
     gap: 1rem;
   }
-}/*# sourceMappingURL=styles.css.map */
+} /*# sourceMappingURL=styles.css.map */
