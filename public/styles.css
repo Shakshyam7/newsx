@@ -27,7 +27,8 @@ p {
   z-index: 999;
 }
 .sidebar ul {
-  padding: 0;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
 }
 .sidebar ul li {
   cursor: pointer;
@@ -65,11 +66,11 @@ main {
     width: 75% !important;
   }
   .c-carousel {
-    margin-top: 2rem;
+    padding: 1rem;
   }
   .c-carousel .carousel-inner img {
     overflow: hidden;
-    height: 400px;
+    height: 500px;
     -o-object-fit: cover;
        object-fit: cover;
     border-radius: 12px;
