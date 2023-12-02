@@ -68,12 +68,14 @@ main {
   .c-carousel {
     padding: 1rem;
   }
+  .c-carousel .carousel-inner {
+    border-radius: 12px;
+  }
   .c-carousel .carousel-inner img {
     overflow: hidden;
     height: 500px;
     -o-object-fit: cover;
        object-fit: cover;
-    border-radius: 12px;
   }
 }
 @media screen and (min-width: 992px) {

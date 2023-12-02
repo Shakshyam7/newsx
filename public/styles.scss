@@ -67,11 +67,11 @@ main {
   .c-carousel {
     padding: 1rem;
     .carousel-inner {
+      border-radius: 12px;
       img {
         overflow: hidden;
         height: 500px;
         object-fit: cover;
-        border-radius: 12px;
       }
     }
   }
