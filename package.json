@@ -1,0 +1,23 @@
+{
+  "name": "module4-shakshyam7",
+  "version": "1.0.0",
+  "description": "A DGL213 final project that to display news from news api sources using Express as backend and MariaDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NIC-Brian-Org/module4-Shakshyam7.git"
+  },
+  "author": "'Shak'",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NIC-Brian-Org/module4-Shakshyam7/issues"
+  },
+  "homepage": "https://github.com/NIC-Brian-Org/module4-Shakshyam7#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5"
+  }
+}
