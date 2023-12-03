@@ -1,17 +1,21 @@
-const express = require('express');
+import express from 'express';
 const app = express();
-const db = require('mysql2');
-const dotenv = require('dotenv');
+import { config } from 'dotenv';
+import db from './connect.js';
 
-const pool = mysql.createPool({
-  host: 'mariadb.bkoehler.imgd.ca', // Hostname of the database server
-  user: 'user',
-  password: 'password',
-  database: 'user0050_db0001',
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-  ssl: true,
+// middlewares
+config();
+
+const port = process.env.PORT || 8000;
+app.listen(port, () => {
+  console.log(`server listenning on port ${port}`);
 });
 
+app.use('/', express.static('public'));
 
+app.use('/news', (req, res) => {
+  const q = `SELECT * FROM news`;
+  db.execute(q, (err, result) => {
+    console.log(result);
+  });
+});
