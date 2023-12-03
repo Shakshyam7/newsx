@@ -1,21 +1,16 @@
 import express from 'express';
 const app = express();
 import { config } from 'dotenv';
-import db from './connect.js';
+import newsRoutes from './routes/news.js';
 
 // middlewares
 config();
+app.use(express.json());
 
-const port = process.env.PORT || 8000;
-app.listen(port, () => {
-  console.log(`server listenning on port ${port}`);
+app.listen(8000, () => {
+  console.log(`server listenning on port 8000`);
 });
 
 app.use('/', express.static('public'));
 
-app.use('/news', (req, res) => {
-  const q = `SELECT * FROM news`;
-  db.execute(q, (err, result) => {
-    console.log(result);
-  });
-});
+app.use('/api/news', newsRoutes);
