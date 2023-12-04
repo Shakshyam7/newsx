@@ -5,10 +5,11 @@ config();
 
 export const getNews = async (req, res) => {
   try {
-    const response = await axios.get(
-      `https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=${process.env.API_KEY}`
+    const { data } = await axios.get(
+      `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.API_KEY}`
     );
-    console.log(response);
+
+    res.send(data);
   } catch (error) {
     console.log(error);
   }
