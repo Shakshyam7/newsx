@@ -42,7 +42,9 @@ header {
     text-decoration: none;
   }
   .profile {
-    margin-right: 1rem;
+    position: relative;
+    color: $text;
+    margin: 1rem 0rem;
     .profile-name {
       display: none;
     }
@@ -57,6 +59,18 @@ header {
       align-items: center;
       color: $primary;
       padding: 1rem;
+    }
+    .dropdown-content {
+      width: 100%;
+      position: absolute;
+      z-index: 9;
+      background: $primary;
+      top: 80px;
+      padding: 1rem;
+      border-radius: 12px;
+      a {
+        color: $text;
+      }
     }
   }
 }
@@ -141,16 +155,17 @@ main {
       margin-top: 2rem;
     }
     .profile {
-      width: 100%;
+      width: fit-content;
       position: absolute;
       bottom: 0;
+      width: 100%;
+      right: 0px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 1rem 0rem;
-      padding: 1rem 0.5rem;
-      gap: 5px;
-      overflow: hidden;
+      margin: 1rem 0;
+      padding: 1rem;
+      gap: 8px;
       cursor: pointer;
       .profile-name {
         display: flex;
@@ -163,7 +178,10 @@ main {
     }
   }
   .sidebar {
-    display: inline-flex;
+    display: block;
+    ul {
+      margin-top: 5rem;
+    }
   }
   main {
     margin-left: 25%;

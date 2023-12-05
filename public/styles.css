@@ -38,7 +38,9 @@ header .logo {
   text-decoration: none;
 }
 header .profile {
-  margin-right: 1rem;
+  position: relative;
+  color: rgba(255, 255, 255, 0.87);
+  margin: 1rem 0rem;
 }
 header .profile .profile-name {
   display: none;
@@ -54,6 +56,18 @@ header .profile .profile-bg {
   align-items: center;
   color: #002f3b;
   padding: 1rem;
+}
+header .profile .dropdown-content {
+  width: 100%;
+  position: absolute;
+  z-index: 9;
+  background: #002f3b;
+  top: 80px;
+  padding: 1rem;
+  border-radius: 12px;
+}
+header .profile .dropdown-content a {
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .carousel-inner h5,
@@ -135,16 +149,18 @@ main {
     margin-top: 2rem;
   }
   header .profile {
-    width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
     position: absolute;
     bottom: 0;
+    width: 100%;
+    right: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0rem;
-    padding: 1rem 0.5rem;
-    gap: 5px;
-    overflow: hidden;
+    margin: 1rem 0;
+    padding: 1rem;
+    gap: 8px;
     cursor: pointer;
   }
   header .profile .profile-name {
@@ -157,7 +173,10 @@ main {
     border-radius: 12px;
   }
   .sidebar {
-    display: inline-flex;
+    display: block;
+  }
+  .sidebar ul {
+    margin-top: 5rem;
   }
   main {
     margin-left: 25%;

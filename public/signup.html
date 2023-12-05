@@ -29,7 +29,7 @@
           width: 75% !important;
         }
       }
-      @media screen and (min-width: 792px) {
+      @media screen and (min-width: 992px) {
         .signup-form {
           margin: 80px;
           width: 50% !important;
@@ -39,11 +39,16 @@
   </head>
   <body>
     <header class="col-lg-3 c-header">
-      <div class="text-dark d-flex align-items-center p-2">
+      <div class="text-light d-flex align-items-center p-2">
         <div class="d-md-none">
           <i class="bi bi-list display-6 hamburger mx-2"></i>
         </div>
-        <a class="fs-1 text-center w-100 logo" href="index.html"> NewsX </a>
+        <div class="fs-1 text-center w-100 logo">NewsX</div>
+
+        <div class="profile">
+          <span class="profile-name">Shakshyam Sapkota</span
+          ><span class="profile-bg"> SS </span>
+        </div>
       </div>
       <nav class="sidebar px-2">
         <ul class="fs-5 px-0">
@@ -60,6 +65,11 @@
           <li class="p-2 my-3 my-lg-4 sidebar-li">
             <a href="saved.html"> <i class="bi bi-bookmark mx-2"></i> Saved </a>
           </li>
+          <li class="p-2 my-3 my-lg-4 sidebar-li">
+            <a href="login.html">
+              <i class="bi bi-box-arrow-in-right mx-2"></i> Login
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -67,7 +77,7 @@
     <main class="col-lg-9 d-flex justify-content-center">
       <div class="shadow-sm rounded-2 p-2 p-sm-5 signup-form mx-md-5 m-2 w-100">
         <h2 class="fs-2 mb-4 mt-4 mt-md-0 text-center">Create an Account</h2>
-        <form action="#" class="position-relative">
+        <form action="#" class="position-relative mt-5">
           <div class="row d-flex g-2">
             <div class="col form-floating">
               <input
