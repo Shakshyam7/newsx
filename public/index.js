@@ -23,6 +23,7 @@
         const data = res.results;
         console.log(data);
         updateCarousel(data);
+        updateLatestNews(data);
       } catch (error) {
         console.error('Error fetching news:', error);
       }
@@ -74,6 +75,14 @@
       news.splice(3).forEach((item) => {
         const cardElement = document.createElement('div');
         cardElement.classList.add('card', 'px-0');
+
+        cardElement.innerHTML = `
+        <img
+              src="${item.multimedia[1].url}"
+              class="card-img-top card-img"
+              alt="..."
+            />`;
+        newsElement.appendChild(cardElement);
       });
     }
 
