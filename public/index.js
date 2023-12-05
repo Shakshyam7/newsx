@@ -76,12 +76,22 @@
         const cardElement = document.createElement('div');
         cardElement.classList.add('card', 'px-0');
 
+        // Appds the image to the card
         cardElement.innerHTML = `
         <img
               src="${item.multimedia[1].url}"
               class="card-img-top card-img"
               alt="..."
             />`;
+
+        // creates a new div for the card body
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
+        cardBody.innerHTML = `
+            <h5 clas="card-title">${item.title}</h5>
+            <p class="card-text">${item.abstract}</p>`;
+
+        cardElement.appendChild(cardBody);
         newsElement.appendChild(cardElement);
       });
     }
