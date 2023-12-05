@@ -35,6 +35,7 @@ header {
 header .logo {
   color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .carousel-inner h5,
@@ -44,6 +45,7 @@ header .logo {
 
 .hamburger {
   cursor: pointer;
+  color: #d1d5db;
 }
 
 .sidebar {
@@ -124,10 +126,9 @@ main {
   }
   .c-carousel .carousel-inner img {
     overflow: hidden;
-    height: 100vh;
+    height: 70vh;
     -o-object-fit: cover;
        object-fit: cover;
-    background-image: linear-gradient(to top red green);
   }
 }
 @media screen and (min-width: 992px) {

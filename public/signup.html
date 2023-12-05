@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
     <style>
-      .signup-text {
+      .login-text {
         margin-left: 0.5rem;
         font-weight: bold;
         cursor: pointer;
@@ -24,7 +24,7 @@
         text-decoration: underline;
       }
       @media screen and (min-width: 768px) {
-        .login-form {
+        .signup-form {
           margin: 80px;
           width: 50% !important;
         }
@@ -59,9 +59,38 @@
     </header>
 
     <main class="col-lg-9 d-flex justify-content-center">
-      <div class="shadow-sm rounded-2 p-2 p-sm-5 login-form mx-md-5 m-2 w-100">
-        <h2 class="fs-2 mb-4 mt-4 mt-md-0 text-center">Login</h2>
+      <div class="shadow-sm rounded-2 p-2 p-sm-5 signup-form mx-md-5 m-2 w-100">
+        <h2 class="fs-2 mb-4 mt-4 mt-md-0 text-center">Create an Account</h2>
         <form action="#" class="position-relative">
+          <div class="row d-flex g-2">
+            <div class="col form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="fname"
+                placeholder="Firstname"
+              />
+              <label for="fname">First Name</label>
+            </div>
+            <div class="col form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="lname"
+                placeholder="haribahadur"
+              />
+              <label for="lname">Last Name</label>
+            </div>
+          </div>
+          <div class="form-floating mt-3 mb-3">
+            <input
+              type="number"
+              class="form-control"
+              id="number"
+              placeholder="haribahadur@example.com"
+            />
+            <label for="number">Phone</label>
+          </div>
           <div class="form-floating mt-3 mb-3">
             <input
               type="email"
@@ -83,12 +112,12 @@
               type="button"
               class="btn text-uppercase mt-4 w-100 fw-bold btn-custom"
             >
-              Login
+              Sign up
             </button>
-            <div class="my-4 text-center">
+            <div class="my-3 text-center">
               <p>
-                Dont have an account
-                <a class="signup-text" href="signup.html">Signup</a>
+                Already have an account?
+                <a class="login-text" href="login.html">Login</a>
               </p>
             </div>
           </div>

@@ -75,7 +75,7 @@
       // loops through all the news from third element
       news.splice(3).forEach((item) => {
         const cardElement = document.createElement('div');
-        cardElement.classList.add('card', 'px-0');
+        cardElement.classList.add('card', 'px-0', 'my-3', 'my-md-0');
 
         // Appds the image to the card
         cardElement.innerHTML = `

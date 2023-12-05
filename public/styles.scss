@@ -39,6 +39,7 @@ header {
   .logo {
     color: $text;
     cursor: pointer;
+    text-decoration: none;
   }
 }
 
@@ -50,6 +51,7 @@ header {
 }
 .hamburger {
   cursor: pointer;
+  color: $background;
 }
 .sidebar {
   display: none;
@@ -129,9 +131,8 @@ main {
       border-radius: 12px;
       img {
         overflow: hidden;
-        height: 100vh;
+        height: 70vh;
         object-fit: cover;
-        background-image: linear-gradient(to top red green);
       }
     }
   }
