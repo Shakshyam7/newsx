@@ -48,7 +48,6 @@ header .logo {
 
 .sidebar {
   display: none;
-  color: rgba(255, 255, 255, 0.87);
   z-index: 999;
 }
 .sidebar ul {
@@ -64,6 +63,10 @@ header .logo {
   background-color: #005165;
   border-radius: 12px;
 }
+.sidebar ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.87);
+}
 .sidebar ul .active {
   background-color: #005165;
   border-radius: 12px;
@@ -75,6 +78,16 @@ header .logo {
 }
 .card h5 {
   color: #002f3b;
+}
+
+.btn-custom {
+  background-color: #002f3b;
+  color: rgba(255, 255, 255, 0.87);
+  cursor: pointer;
+}
+.btn-custom:hover {
+  background-color: rgba(0, 47, 59, 0.8);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 @media screen and (min-width: 576px) {

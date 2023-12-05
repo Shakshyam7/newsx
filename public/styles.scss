@@ -53,7 +53,6 @@ header {
 }
 .sidebar {
   display: none;
-  color: $text;
   z-index: 999;
   ul {
     padding-bottom: 1rem;
@@ -66,6 +65,10 @@ header {
       &:hover {
         background-color: $secondary;
         border-radius: 12px;
+      }
+      a {
+        text-decoration: none;
+        color: $text;
       }
     }
     .active {
@@ -80,6 +83,16 @@ header {
   background: $background;
   h5 {
     color: $primary;
+  }
+}
+
+.btn-custom {
+  background-color: $primary;
+  color: $text;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba($primary, 0.8);
+    color: $text;
   }
 }
 
