@@ -27,5 +27,11 @@
       }
     }
     getNews();
+
+    function updateCarousel(news) {
+      const carousel = document.querySelector('.carousel-inner');
+
+      carousel.innerHTML = ''; 
+    }
   });
 })();
