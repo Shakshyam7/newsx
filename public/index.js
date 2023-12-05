@@ -29,25 +29,38 @@
     }
     getNews();
 
+    // Adds the image carousel
     function updateCarousel(news) {
       const carousel = document.querySelector('.carousel-inner');
 
       carousel.innerHTML = '';
 
+      // Loops through the first 3 items
       news.splice(0, 3).forEach((item, index) => {
         const carouselItem = document.createElement('div');
         carouselItem.classList.add('carousel-item');
 
+        // adds the active class to the carousel item
         if (index === 0) {
           carouselItem.classList.add('active');
         }
-        
+
         carouselItem.innerHTML = `
         <img
               src="${item.multimedia[0].url}"
               class="d-block w-100"
               alt="..."
             />`;
+
+        // creates a new div for the caption
+        const caption = document.createElement('div');
+        caption.classList.add('carousel-caption', 'd-none', 'd-md-block');
+        caption.innerHTML = ` <h5>${item.title}</h5>
+        <p>
+        ${item.abstract}
+        </p>`;
+
+        carouselItem.appendChild(caption);
         carousel.appendChild(carouselItem);
       });
     }
