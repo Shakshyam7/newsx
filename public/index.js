@@ -15,12 +15,13 @@
       }
     });
 
+    // calls to get the news for home page
     async function getNews() {
       try {
         const response = await fetch(`http://localhost:8000/api/news`);
-        console.log(response);
-        const data = await response.json();
-        console.log(data.results);
+        const res = await response.json();
+        const data = res.results;
+        console.log(data);
       } catch (error) {
         console.error('Error fetching news:', error);
       }
