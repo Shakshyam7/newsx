@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+$primary: #002f3b;
+$secondary: #005165;
+$background: #d1d5db;
+$text: rgba(255, 255, 255, 0.87);
+
 *,
 *::before,
 *::after {
@@ -6,23 +13,47 @@
   padding: 0;
 }
 
+body {
+  background: rgba($background, 0.6);
+  font-family: 'Oxygen', sans-serif;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
+  color: $primary;
   margin: 0;
   padding: 0;
 }
+p {
+  margin: 0;
+  padding: 0;
+  color: $primary;
+}
 
+header {
+  background: $primary;
+  .logo {
+    color: $text;
+    cursor: pointer;
+  }
+}
+
+.carousel-inner {
+  h5,
+  p {
+    color: $text;
+  }
+}
 .hamburger {
   cursor: pointer;
 }
 .sidebar {
   display: none;
-  color: white;
+  color: $text;
   z-index: 999;
   ul {
     padding-bottom: 1rem;
@@ -30,13 +61,28 @@ p {
     li {
       cursor: pointer;
       list-style-type: none;
+      transition: 0.3s ease;
+
       &:hover {
-        background-color: grey;
+        background-color: $secondary;
         border-radius: 12px;
       }
     }
+    .active {
+      background-color: $secondary;
+      border-radius: 12px;
+      transition: 0.3s ease;
+    }
   }
 }
+
+.card {
+  background: $background;
+  h5 {
+    color: $primary;
+  }
+}
+
 @media screen and (min-width: 576px) {
   .latest-news {
     display: grid;
@@ -70,8 +116,9 @@ main {
       border-radius: 12px;
       img {
         overflow: hidden;
-        height: 500px;
+        height: 100vh;
         object-fit: cover;
+        background-image: linear-gradient(to top red green);
       }
     }
   }

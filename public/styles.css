@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 *,
 *::before,
 *::after {
@@ -6,15 +7,39 @@
   padding: 0;
 }
 
+body {
+  background: rgba(209, 213, 219, 0.6);
+  font-family: "Oxygen", sans-serif;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+  color: #002f3b;
+  margin: 0;
+  padding: 0;
+}
+
 p {
   margin: 0;
   padding: 0;
+  color: #002f3b;
+}
+
+header {
+  background: #002f3b;
+}
+header .logo {
+  color: rgba(255, 255, 255, 0.87);
+  cursor: pointer;
+}
+
+.carousel-inner h5,
+.carousel-inner p {
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .hamburger {
@@ -23,7 +48,7 @@ p {
 
 .sidebar {
   display: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.87);
   z-index: 999;
 }
 .sidebar ul {
@@ -33,10 +58,23 @@ p {
 .sidebar ul li {
   cursor: pointer;
   list-style-type: none;
+  transition: 0.3s ease;
 }
 .sidebar ul li:hover {
-  background-color: grey;
+  background-color: #005165;
   border-radius: 12px;
+}
+.sidebar ul .active {
+  background-color: #005165;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.card {
+  background: #d1d5db;
+}
+.card h5 {
+  color: #002f3b;
 }
 
 @media screen and (min-width: 576px) {
@@ -73,9 +111,10 @@ main {
   }
   .c-carousel .carousel-inner img {
     overflow: hidden;
-    height: 500px;
+    height: 100vh;
     -o-object-fit: cover;
        object-fit: cover;
+    background-image: linear-gradient(to top red green);
   }
 }
 @media screen and (min-width: 992px) {

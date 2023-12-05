@@ -4,6 +4,7 @@
   window.addEventListener('load', () => {
     //variables
     const hamMenu = document.querySelector('.hamburger');
+    const menuItems = document.querySelectorAll('.sidebar-li');
 
     // toggles the sidebar in small device
     hamMenu.addEventListener('click', () => {
@@ -55,8 +56,8 @@
         // creates a new div for the caption
         const caption = document.createElement('div');
         caption.classList.add('carousel-caption', 'd-none', 'd-md-block');
-        caption.innerHTML = ` <h5>${item.title}</h5>
-        <p>
+        caption.innerHTML = ` <h5 class="fw-bold">${item.title}</h5>
+        <p class="my-2">
         ${item.abstract}
         </p>`;
 
@@ -88,8 +89,8 @@
         const cardBody = document.createElement('div');
         cardBody.classList.add('card-body');
         cardBody.innerHTML = `
-            <h5 clas="card-title">${item.title}</h5>
-            <p class="card-text">${item.abstract}</p>`;
+            <h5 class="card-title fw-bold">${item.title}</h5>
+            <p class="card-text mt-2">${item.abstract}</p>`;
 
         cardElement.appendChild(cardBody);
         newsElement.appendChild(cardElement);
@@ -97,5 +98,16 @@
     }
 
     getNews();
+    menuItems.forEach((menuItem) => {
+      menuItem.addEventListener('click', () => {
+        menuItem.classList.toggle('active');
+
+        menuItems.forEach((otherItems) => {
+          if (menuItem !== otherItems) {
+            otherItems.classList.remove('active');
+          }
+        });
+      });
+    });
   });
 })();
