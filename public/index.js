@@ -27,7 +27,6 @@
         console.error('Error fetching news:', error);
       }
     }
-    getNews();
 
     // Adds the image carousel
     function updateCarousel(news) {
@@ -64,5 +63,20 @@
         carousel.appendChild(carouselItem);
       });
     }
+
+    // Function to create a cards for latest news
+
+    function updateLatestNews(news) {
+      const newsElement = document.querySelector('.latest-news');
+      newsElement.innerHTML = '';
+
+      // loops through all the news from third element
+      news.splice(3).forEach((item) => {
+        const cardElement = document.createElement('div');
+        cardElement.classList.add('card', 'px-0');
+      });
+    }
+
+    getNews();
   });
 })();
