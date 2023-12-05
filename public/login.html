@@ -16,8 +16,17 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
     <style>
-      .c-form {
-        margin: 80px;
+      .login-text {
+        margin-left: 0.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        color: #005165;
+        text-decoration: underline;
+      }
+      @media screen and (min-width: 768px) {
+        .c-form {
+          margin: 80px;
+        }
       }
     </style>
   </head>
@@ -48,11 +57,9 @@
       </nav>
     </header>
 
-    <main
-      class="col-lg-9 d-flex justify-content-center align-items-center rounded"
-    >
-      <div class="shadow px-0 p-md-5 c-form mx-5">
-        <h2 class="text-capitalize fs-2 mb-4">Create an Account</h2>
+    <main class="col-lg-9 d-flex justify-content-center">
+      <div class="shadow-sm rounded-2 p-2 p-sm-5 c-form mx-md-5 m-2">
+        <h2 class="fs-2 mb-4 mt-4 mt-md-0">Create an Account</h2>
         <form action="#" class="position-relative">
           <div class="row d-flex g-2">
             <div class="col form-floating">
@@ -100,11 +107,17 @@
               placeholder="haribahadur@example.com"
             />
             <label for="email">Password</label>
+            <div class="my-3">
+              <small>
+                Already have an account?
+                <span class="login-text">Login</span></small
+              >
+            </div>
             <button
               type="button"
               class="btn text-uppercase mt-3 w-100 fw-bold btn-custom"
             >
-              Send
+              Sign up
             </button>
           </div>
         </form>
