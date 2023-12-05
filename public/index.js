@@ -22,6 +22,7 @@
         const res = await response.json();
         const data = res.results;
         console.log(data);
+        updateCarousel(data);
       } catch (error) {
         console.error('Error fetching news:', error);
       }
@@ -31,7 +32,24 @@
     function updateCarousel(news) {
       const carousel = document.querySelector('.carousel-inner');
 
-      carousel.innerHTML = ''; 
+      carousel.innerHTML = '';
+
+      news.splice(0, 3).forEach((item, index) => {
+        const carouselItem = document.createElement('div');
+        carouselItem.classList.add('carousel-item');
+
+        if (index === 0) {
+          carouselItem.classList.add('active');
+        }
+        
+        carouselItem.innerHTML = `
+        <img
+              src="${item.multimedia[0].url}"
+              class="d-block w-100"
+              alt="..."
+            />`;
+        carousel.appendChild(carouselItem);
+      });
     }
   });
 })();
