@@ -41,6 +41,24 @@ header {
     cursor: pointer;
     text-decoration: none;
   }
+  .profile {
+    margin-right: 1rem;
+    .profile-name {
+      display: none;
+    }
+    .profile-bg {
+      height: 50px;
+      width: 50px;
+      background: $background;
+      border-radius: 100%;
+      display: flex;
+      border: 1px solid rgb(79, 137, 176);
+      justify-content: center;
+      align-items: center;
+      color: $primary;
+      padding: 1rem;
+    }
+  }
 }
 
 .carousel-inner {
@@ -63,6 +81,8 @@ header {
       cursor: pointer;
       list-style-type: none;
       transition: 0.3s ease;
+      text-wrap: nowrap;
+      overflow: hidden;
 
       &:hover {
         background-color: $secondary;
@@ -117,9 +137,33 @@ main {
     width: 25% !important;
     position: fixed;
     z-index: 2;
+    .logo {
+      margin-top: 2rem;
+    }
+    .profile {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 0rem;
+      padding: 1rem 0.5rem;
+      gap: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      .profile-name {
+        display: flex;
+        width: fit-content;
+      }
+      &:hover {
+        background-color: $secondary;
+        border-radius: 12px;
+      }
+    }
   }
   .sidebar {
-    display: block;
+    display: inline-flex;
   }
   main {
     margin-left: 25%;
@@ -131,7 +175,7 @@ main {
       border-radius: 12px;
       img {
         overflow: hidden;
-        height: 70vh;
+        height: 75vh;
         object-fit: cover;
       }
     }
