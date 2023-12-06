@@ -18,7 +18,9 @@ export const signUp = async (req, res) => {
       const values = [req.body.name, req.body.phone, req.body.email, hashPw];
       db.query(q, [values], (err, data) => {
         if (err) return res.status(500).json(err);
-        return res.status(200).json('User created successfully');
+        return res.status(200).json({
+          user: 'User successfully registered. Please login',
+        });
       });
     }
   });
