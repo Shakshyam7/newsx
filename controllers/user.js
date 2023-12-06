@@ -1,5 +1,7 @@
 import db from '../connect.js';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import cookieParser from 'cookie-parser';
 
 // Sign up the user
 export const signUp = async (req, res) => {
@@ -40,5 +42,9 @@ export const login = async (req, res) => {
     if (!checkPassword) {
       return res.status(401).json('Wrong email or password');
     }
+    const { password, ...userData } = data[0];
+    const accessToken = jwt.sign({ id: data[0].id }, process.env.SECRET_KEY);
+    res.cookie('jwt', accessToken, { expiresIn: '7d', httpOnly: true });
+    res.status(200).json(userData);
   });
 };
