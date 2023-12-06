@@ -49,6 +49,6 @@ export const login = async (req, res) => {
     // sends the jwt as a cookie
     const accessToken = jwt.sign({ id: data[0].id }, process.env.SECRET_KEY);
     res.cookie('jwt', accessToken, { expiresIn: '7d', httpOnly: true });
-    res.status(200).json(userData);
+    res.status(200).json({ userData });
   });
 };
