@@ -23,4 +23,16 @@ export const signUp = async (req, res) => {
 };
 
 // Login the user
-export const login = async (req, res) => {};
+export const login = async (req, res) => {
+  console.log('Incoming login req');
+  const q = `SELECT * FROM users WHERE email = ?`;
+  db.query(q, [req.body.email], (err, data) => {
+    if (err) {
+      return res.status(401).json('Wring email or password');
+    }
+    if (data.length === 0) {
+      return res.status(404).json('Email does not exists');
+    }
+    res.status(200).json('Data sent');
+  });
+};
