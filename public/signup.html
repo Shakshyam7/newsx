@@ -39,7 +39,7 @@
   </head>
   <body>
     <header class="col-lg-3 c-header">
-      <div class="text-light d-flex align-items-center p-2">
+      <div class="text-light d-flex align-items-center p-2 p-md-0">
         <div class="d-md-none">
           <i class="bi bi-list display-6 hamburger mx-2"></i>
         </div>
@@ -51,26 +51,28 @@
         </div>
       </div>
       <nav class="sidebar px-2">
-        <ul class="fs-5 px-0">
-          <li class="p-2 my-3 my-lg-4 sidebar-li">
-            <a href="index.html">
+        <div class="fs-5 px-0">
+          <a href="index.html" class="sidebar-li">
+            <div class="p-2 my-3 my-lg-4">
               <i class="bi bi-arrow-up-right-circle mx-2"></i> Trending
-            </a>
-          </li>
-          <li class="p-2 my-3 my-lg-4 sidebar-li">
-            <a href="login.html">
+            </div>
+          </a>
+          <a href="index.html" class="sidebar-li">
+            <div class="p-2 my-3 my-lg-4">
               <i class="bi bi-star mx-2"></i> Recommended
-            </a>
-          </li>
-          <li class="p-2 my-3 my-lg-4 sidebar-li">
-            <a href="saved.html"> <i class="bi bi-bookmark mx-2"></i> Saved </a>
-          </li>
-          <li class="p-2 my-3 my-lg-4 sidebar-li">
-            <a href="login.html">
+            </div>
+          </a>
+          <a href="saved.html" class="sidebar-li">
+            <div class="p-2 my-3 my-lg-4">
+              <i class="bi bi-bookmark mx-2"></i> Saved
+            </div>
+          </a>
+          <a href="login.html" class="sidebar-li">
+            <div class="p-2 my-3 my-lg-4">
               <i class="bi bi-box-arrow-in-right mx-2"></i> Login
-            </a>
-          </li>
-        </ul>
+            </div>
+          </a>
+        </div>
       </nav>
     </header>
 
@@ -85,6 +87,7 @@
                 class="form-control"
                 id="fname"
                 placeholder="Firstname"
+                required
               />
               <label for="fname">First Name</label>
             </div>
@@ -94,6 +97,7 @@
                 class="form-control"
                 id="lname"
                 placeholder="haribahadur"
+                required
               />
               <label for="lname">Last Name</label>
             </div>
@@ -104,6 +108,7 @@
               class="form-control"
               id="number"
               placeholder="haribahadur@example.com"
+              required
             />
             <label for="number">Phone</label>
           </div>
@@ -113,6 +118,7 @@
               class="form-control"
               id="email"
               placeholder="haribahadur@example.com"
+              required
             />
             <label for="email">Email address</label>
           </div>
@@ -122,10 +128,11 @@
               class="form-control"
               id="password"
               placeholder="haribahadur@example.com"
+              required
             />
             <label for="email">Password</label>
             <button
-              type="button"
+              type="submit"
               class="btn text-uppercase mt-4 w-100 fw-bold btn-custom"
             >
               Sign up

@@ -84,26 +84,23 @@ header .profile .dropdown-content a {
   display: none;
   z-index: 999;
 }
-.sidebar ul {
+.sidebar div {
   padding-bottom: 1rem;
   margin-bottom: 0;
 }
-.sidebar ul li {
+.sidebar div .sidebar-li {
   cursor: pointer;
-  list-style-type: none;
   transition: 0.3s ease;
-  text-wrap: nowrap;
   overflow: hidden;
-}
-.sidebar ul li:hover {
-  background-color: #005165;
-  border-radius: 12px;
-}
-.sidebar ul li a {
+  white-space: nowrap;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.87);
 }
-.sidebar ul .active {
+.sidebar div .sidebar-li:hover {
+  background-color: red !important;
+  border-radius: 12px !important;
+}
+.sidebar div .active {
   background-color: #005165;
   border-radius: 12px;
   transition: 0.3s ease;
@@ -175,7 +172,7 @@ main {
   .sidebar {
     display: block;
   }
-  .sidebar ul {
+  .sidebar div {
     margin-top: 5rem;
   }
   main {

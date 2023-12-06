@@ -1,7 +1,6 @@
 import db from '../connect.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import cookieParser from 'cookie-parser';
 
 // Sign up the user
 export const signUp = async (req, res) => {
@@ -9,6 +8,7 @@ export const signUp = async (req, res) => {
   const q = `SELECT * FROM users WHERE email = ?`;
   db.query(q, [req.body.email], (err, data) => {
     if (err) return res.status(500).json(err);
+    // checks if the data is returned
     else if (data.length) return res.status(409).json('Email already in use');
     else {
       // hash the password before saving to the db
@@ -31,7 +31,9 @@ export const login = async (req, res) => {
   db.query(q, [req.body.email], (err, data) => {
     if (err) {
       return res.status(401).json('Wrong email or password');
-    } else if (data.length === 0) {
+    }
+    // checks if the data is empty as query with unregistered email will send empty data
+    else if (data.length === 0) {
       return res.status(404).json('Email does not exists');
     }
     // checks the hased pw with the user pw
@@ -42,7 +44,9 @@ export const login = async (req, res) => {
     if (!checkPassword) {
       return res.status(401).json('Wrong email or password');
     }
+    // Sending the user data expect password
     const { password, ...userData } = data[0];
+    // sends the jwt as a cookie
     const accessToken = jwt.sign({ id: data[0].id }, process.env.SECRET_KEY);
     res.cookie('jwt', accessToken, { expiresIn: '7d', httpOnly: true });
     res.status(200).json(userData);

@@ -88,23 +88,19 @@ header {
 .sidebar {
   display: none;
   z-index: 999;
-  ul {
+  div {
     padding-bottom: 1rem;
     margin-bottom: 0;
-    li {
+    .sidebar-li {
       cursor: pointer;
-      list-style-type: none;
       transition: 0.3s ease;
-      text-wrap: nowrap;
       overflow: hidden;
-
+      white-space: nowrap;
+      text-decoration: none;
+      color: $text;
       &:hover {
-        background-color: $secondary;
-        border-radius: 12px;
-      }
-      a {
-        text-decoration: none;
-        color: $text;
+        background-color: red !important;
+        border-radius: 12px !important;
       }
     }
     .active {
@@ -179,7 +175,7 @@ main {
   }
   .sidebar {
     display: block;
-    ul {
+    div {
       margin-top: 5rem;
     }
   }
