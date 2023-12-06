@@ -18,3 +18,4 @@ app.use('/', express.static('public'));
 
 app.use('/api/news', newsRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);

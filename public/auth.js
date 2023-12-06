@@ -20,7 +20,10 @@
             'Content-Type': 'application/json',
           },
         });
-        console.log(await res.json());
+        const data = await res.json();
+        if (data.userData) {
+          location.assign('/recommended.html');
+        }
       } catch (error) {
         console.log(error);
       }
