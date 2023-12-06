@@ -28,11 +28,17 @@ export const login = async (req, res) => {
   const q = `SELECT * FROM users WHERE email = ?`;
   db.query(q, [req.body.email], (err, data) => {
     if (err) {
-      return res.status(401).json('Wring email or password');
-    }
-    if (data.length === 0) {
+      return res.status(401).json('Wrong email or password');
+    } else if (data.length === 0) {
       return res.status(404).json('Email does not exists');
     }
-    res.status(200).json('Data sent');
+    // checks the hased pw with the user pw
+    const checkPassword = bcrypt.compareSync(
+      req.body.password,
+      data[0].password
+    );
+    if (!checkPassword) {
+      return res.status(401).json('Wrong email or password');
+    }
   });
 };
