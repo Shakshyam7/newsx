@@ -8,6 +8,7 @@
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
+      error.textContent = '';
       console.log(email.value, password.value);
       try {
         const res = await fetch('/api/auth/login', {
@@ -23,6 +24,8 @@
         const data = await res.json();
         if (data.userData) {
           location.assign('/recommended.html');
+        } else {
+          error.textContent = data;
         }
       } catch (error) {
         console.log(error);
