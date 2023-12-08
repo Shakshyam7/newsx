@@ -97,7 +97,7 @@
       });
     }
 
-    // getNews();
+    getNews();
     menuItems.forEach((menuItem) => {
       menuItem.addEventListener('click', () => {
         menuItem.classList.add('active');

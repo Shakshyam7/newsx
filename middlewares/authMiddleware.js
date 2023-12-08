@@ -6,13 +6,15 @@ const verifyToken = (req, res, next) => {
     jwt.verify(token, process.env.SECRET_KEY, (err, decodedToken) => {
       if (err) {
         console.log(err);
-        res.redirect('/login.html');
+        res.redirect('/login');
       } else {
         console.log(decodedToken);
         next();
       }
     });
   } else {
-    res.redirect('/login.html');
+    res.redirect('/login');
   }
 };
+
+export { verifyToken };

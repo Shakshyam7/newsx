@@ -4,17 +4,24 @@ import { config } from 'dotenv';
 import newsRoutes from './routes/news.js';
 import authRoutes from './routes/users.js';
 import cors from 'cors';
+import { verifyToken } from './middlewares/authMiddleware.js';
+import cookieParser from 'cookie-parser';
 
 // middlewares
 config();
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
 
 app.listen(8000, () => {
   console.log(`server listenning on port 8000`);
 });
 
 app.use('/', express.static('public'));
+app.use('/recommended', verifyToken, express.static('public/recommended.html'));
+app.use('/saved', verifyToken, express.static('public/saved.html'));
+app.use('/login', express.static('public/login.html'));
+app.use('/signup', express.static('public/signup.html'));
 app.use('/api/news', newsRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/auth', authRoutes);
