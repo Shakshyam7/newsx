@@ -17,18 +17,18 @@
     });
 
     // calls to get the news for home page
-    // async function getNews() {
-    //   try {
-    //     // const response = await fetch(`http://localhost:8000/api/news`);
-    //     const res = await response.json();
-    //     const data = res.results;
-    //     console.log(data);
-    //     updateCarousel(data);
-    //     updateLatestNews(data);
-    //   } catch (error) {
-    //     console.error('Error fetching news:', error);
-    //   }
-    // }
+    async function getNews() {
+      try {
+        const response = await fetch(`http://localhost:8000/api/news`);
+        const res = await response.json();
+        const data = res.results;
+        console.log(data);
+        updateCarousel(data);
+        updateLatestNews(data);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      }
+    }
 
     // Adds the image carousel
     function updateCarousel(news) {
