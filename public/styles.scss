@@ -131,7 +131,9 @@ header {
 .news-select {
   width: 100%;
 }
-
+main {
+  margin-top: 2rem;
+}
 @media screen and (min-width: 576px) {
   .latest-news {
     display: grid;

@@ -41,6 +41,7 @@
 
     async function getNews() {
       try {
+        console.log(news.value);
         const response = await fetch(
           `http://localhost:8000/api/news?topic=${news.value}`
         );
@@ -58,12 +59,12 @@
       const newsElement = document.querySelector('.latest-news');
       newsElement.innerHTML = '';
 
-      // loops through all the news from third element
+      // loops through all the news
       news.forEach((item) => {
         const cardElement = document.createElement('div');
         cardElement.classList.add('card', 'px-0', 'my-3', 'my-md-0');
 
-        // Appds the image to the card
+        // Adds the image to the card
         cardElement.innerHTML = `
           <img
                 src="${item.multimedia[1].url}"
