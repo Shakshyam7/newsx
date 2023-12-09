@@ -3,7 +3,9 @@
 (() => {
   window.addEventListener('load', () => {
     //variables
-    const hamMenu = document.querySelector('.hamburger');
+    let hamMenu = document.querySelector('.hamburger');
+    let profileName = document.querySelector('.profile-name');
+    let profileBg = document.querySelector('.profile-bg');
 
     // toggles the sidebar in small device
     hamMenu.addEventListener('click', () => {
@@ -22,9 +24,14 @@
       if (user && user !== null) {
         const login = document.querySelector('.login');
         login.style.display = 'none';
+        const initial = user.name.split(' ');
+        profileName.textContent = user.name;
+        profileBg.textContent = initial[0][0] + initial[1][0];
       } else {
         const logout = document.querySelector('.logout');
         logout.style.display = 'none';
+        profileName.textContent = 'Guest';
+        profileBg.textContent = 'G';
       }
     }
 
