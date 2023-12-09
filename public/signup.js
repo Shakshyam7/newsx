@@ -8,17 +8,6 @@
     let password = document.getElementById('password');
     let form = document.querySelector('.form');
     let error = document.querySelector('.error');
-    let hamMenu = document.querySelector('.hamburger');
-
-    // toggles the sidebar in small device
-    hamMenu.addEventListener('click', () => {
-      const sidebar = document.querySelector('.sidebar');
-      if (sidebar.style.display === 'none' || sidebar.style.display === '') {
-        sidebar.style.display = 'block';
-      } else {
-        sidebar.style.display = 'none';
-      }
-    });
 
     form.addEventListener('submit', async (event) => {
       let name = fname.value + ' ' + lname.value;

@@ -15,6 +15,20 @@
       }
     });
 
+    function getUser() {
+      const user = JSON.parse(localStorage.getItem('user'));
+      console.log(user);
+
+      if (user) {
+        const login = document.querySelector('.login');
+        login.style.display = 'none';
+      } else {
+        const logout = document.querySelector('.login');
+        logout.style.display = 'none';
+      }
+    }
+    getUser();
+
     // calls to get the news for home page
     async function getNews() {
       try {
