@@ -60,10 +60,9 @@ export const login = async (req, res) => {
 // Log outs the user
 export const logout = (req, res) => {
   try {
-    console.log('Lncoming logout req');
+    console.log(' Incoming logout req');
     res.clearCookie('jwt');
-    res.status(200).json({ userOut: 'User logger out' });
-    res.redirect('/');
+    res.status(200).json({ user: null });
   } catch (error) {
     console.log(error);
   }

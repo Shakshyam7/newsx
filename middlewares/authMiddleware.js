@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-import db from '../connect.js';
 
 // Verifies token
 const verifyToken = (req, res, next) => {

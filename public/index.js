@@ -19,15 +19,14 @@
       const user = JSON.parse(localStorage.getItem('user'));
       console.log(user);
 
-      if (user) {
+      if (user && user !== null) {
         const login = document.querySelector('.login');
         login.style.display = 'none';
       } else {
-        const logout = document.querySelector('.login');
+        const logout = document.querySelector('.logout');
         logout.style.display = 'none';
       }
     }
-    getUser();
 
     // calls to get the news for home page
     async function getNews() {
@@ -110,8 +109,24 @@
       });
     }
 
-    getNews();
+    // Handle Logout
+    //variables
+    let logout = document.querySelector('.logout');
 
-    // Get the user data
+    const handleLogout = async () => {
+      console.log('Logout button clicked');
+      localStorage.removeItem('user');
+      try {
+        const res = await fetch('/api/auth/logout');
+        console.log(res);
+        location.assign('/');
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    logout.addEventListener('click', handleLogout);
+    // getNews();
+    getUser();
   });
 })();

@@ -25,7 +25,7 @@
         if (data.userData) {
           console.log(data.userData);
           localStorage.setItem('user', JSON.stringify(data.userData));
-          location.assign('/recommended');
+          location.assign('/');
         } else {
           error.textContent = data;
         }
