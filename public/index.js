@@ -133,7 +133,7 @@
     };
 
     logout.addEventListener('click', handleLogout);
-    // getNews();
+    getNews();
     getUser();
   });
 })();
