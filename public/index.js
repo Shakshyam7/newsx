@@ -6,6 +6,7 @@
     let hamMenu = document.querySelector('.hamburger');
     let profileName = document.querySelector('.profile-name');
     let profileBg = document.querySelector('.profile-bg');
+    let heading = document.querySelector('.heading');
 
     // toggles the sidebar in small device
     hamMenu.addEventListener('click', () => {
@@ -43,6 +44,7 @@
         const data = res.results;
         console.log(data);
         updateCarousel(data);
+        heading.textContent = 'Latest';
         updateLatestNews(data);
       } catch (error) {
         console.error('Error fetching news:', error);

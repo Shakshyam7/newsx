@@ -18,7 +18,7 @@ app.listen(8000, () => {
 });
 
 app.use('/', express.static('public'));
-app.use('/recommended', verifyToken, express.static('public/recommended.html'));
+app.use('/search', verifyToken, express.static('public/search.html'));
 app.use('/saved', verifyToken, express.static('public/saved.html'));
 app.use('/login', express.static('public/login.html'));
 app.use('/signup', express.static('public/signup.html'));

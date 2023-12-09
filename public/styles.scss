@@ -91,24 +91,12 @@ header {
   div {
     padding-bottom: 1rem;
     margin-bottom: 0;
-    .sidebar-li {
-      cursor: pointer;
-      transition: 0.3s ease;
-      overflow: hidden;
-      white-space: nowrap;
-      text-decoration: none;
-      color: $text;
-      &:hover {
-        background-color: red !important;
-        border-radius: 12px !important;
-      }
-    }
-    .active {
-      background-color: $secondary;
-      border-radius: 12px;
-      transition: 0.3s ease;
-    }
   }
+}
+
+.sidebar-li {
+  text-decoration: underline;
+  color: red;
 }
 
 .card {
