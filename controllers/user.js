@@ -1,6 +1,7 @@
 import db from '../connect.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import cookieParser from 'cookie-parser';
 
 // Sign up the user
 export const signUp = async (req, res) => {
@@ -53,4 +54,12 @@ export const login = async (req, res) => {
     res.cookie('jwt', accessToken, { expiresIn: '7d', httpOnly: true });
     res.status(200).json({ userData });
   });
+};
+
+// Log outs the user
+export const logout = (req, res) => {
+  console.log('Lncoming logout req');
+  res.clearCookie('jwt');
+  res.status(200).json({ userOut: 'User logger out' });
+  res.redirect('/');
 };

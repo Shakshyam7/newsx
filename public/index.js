@@ -4,7 +4,6 @@
   window.addEventListener('load', () => {
     //variables
     const hamMenu = document.querySelector('.hamburger');
-    const menuItems = document.querySelectorAll('.sidebar-li');
 
     // toggles the sidebar in small device
     hamMenu.addEventListener('click', () => {
@@ -98,16 +97,7 @@
     }
 
     getNews();
-    menuItems.forEach((menuItem) => {
-      menuItem.addEventListener('click', () => {
-        menuItem.classList.add('active');
 
-        menuItems.forEach((otherItems) => {
-          if (menuItem !== otherItems) {
-            otherItems.classList.remove('active');
-          }
-        });
-      });
-    });
+    // Get the user data
   });
 })();

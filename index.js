@@ -24,4 +24,3 @@ app.use('/login', express.static('public/login.html'));
 app.use('/signup', express.static('public/signup.html'));
 app.use('/api/news', newsRoutes);
 app.use('/api/auth', authRoutes);
-app.use('/api/auth', authRoutes);

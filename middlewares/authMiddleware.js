@@ -19,33 +19,4 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-// Check User
-const checkUser = async (req, res, next) => {
-  const token = req.cookies.jwt;
-  if (token) {
-    jwt.verify(token, process.env.SECRET_KEY, (err, decodedToken) => {
-      if (err) {
-        console.log(err);
-        res.local.user = null;
-        next();
-      } else {
-        const q = `SELECT * FROM users WHERE id = ?`;
-        db.query(q, [decodedToken.id], (err, result) => {
-          if (err) {
-            console.log(err);
-            res.locals.user = null;
-          } else {
-            const user = result[0];
-            res.locals.user = user;
-          }
-        });
-        next();
-      }
-    });
-  } else {
-    res.locals.user = null;
-    next();
-  }
-};
-
 export { verifyToken };
