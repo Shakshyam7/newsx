@@ -94,6 +94,18 @@
       const handleDelete = async (event) => {
         const newsId = event.currentTarget.getAttribute('data-news-item-Id');
         console.log(newsId);
+        try {
+          const response = await fetch(`/api/news/saved_news/${newsId}`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+          const data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
       };
       deleteBtn.forEach((newsItem) => {
         newsItem.addEventListener('click', handleDelete);
