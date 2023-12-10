@@ -102,7 +102,12 @@
             },
           });
           const data = await response.json();
-          console.log(data);
+          if (data.message) {
+            alert(data.message);
+            return window.location.reload();
+          } else {
+            console.log(error);
+          }
         } catch (error) {
           console.log(error);
         }
