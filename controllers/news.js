@@ -40,7 +40,7 @@ export const saveNews = async (req, res) => {
 export const getSavedNews = (req, res) => {
   const userId = req.userId;
   console.log(userId);
-  const q = `SELECT * FROM news WHERE userId = ?`;
+  const q = `SELECT * FROM news WHERE userId = ? ORDER BY id DESC`;
   db.query(q, [userId], (err, data) => {
     if (err) {
       console.error('Error fetching saved news:', err);
