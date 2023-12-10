@@ -35,3 +35,17 @@ export const saveNews = async (req, res) => {
     return res.status(200).json('News saved successfully');
   });
 };
+
+export const getSavedNews = (req, res) => {
+  const userId = req.query.userId;
+  // Assuming you're using a MySQL database
+  const q = `SELECT * FROM news WHERE userId = ?`;
+  db.query(q, [userId], (err, data) => {
+    if (err) {
+      console.error('Error fetching saved news:', err);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+    res.status(200).json(data);
+  });
+};
