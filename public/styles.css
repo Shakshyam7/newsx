@@ -154,10 +154,6 @@ header .profile .dropdown-content a {
     gap: 1rem;
   }
 }
-main {
-  padding: 0px;
-}
-
 @media screen and (min-width: 768px) {
   header {
     height: 100vh;
