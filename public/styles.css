@@ -114,7 +114,8 @@ header .profile .dropdown-content a {
 }
 
 .news-select {
-  width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .card {
@@ -208,9 +209,6 @@ header .profile .dropdown-content a {
     height: 75vh;
     -o-object-fit: cover;
        object-fit: cover;
-  }
-  .news-select {
-    width: 15%;
   }
 }
 @media screen and (min-width: 992px) {
