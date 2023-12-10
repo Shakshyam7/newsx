@@ -124,13 +124,37 @@
       });
       // Save Functionality
       let iconContainer = document.querySelectorAll('.save-icon');
-      const handleSave = (event) => {
-        // Selects the icon of the selected save-icon class
+      const handleSave = async (event) => {
+        // Get data from the card element
+        const cardElement = event.currentTarget.parentElement;
+        const title = cardElement.querySelector('.card-title').textContent;
+        const description = cardElement.querySelector('.card-text').textContent;
+        const imgUrl = cardElement.querySelector('.card-img-top').src;
         let icon = event.currentTarget.querySelector('.icon');
-        if (icon.classList.contains('bi-bookmark')) {
-          icon.classList.replace('bi-bookmark', 'bi-bookmark-check-fill');
-        } else {
-          icon.classList.replace('bi-bookmark-check-fill', 'bi-bookmark');
+
+        try {
+          const res = await fetch('/api/news/save', {
+            method: 'POST',
+            body: JSON.stringify({
+              title,
+              description,
+              imgUrl,
+            }),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+          const data = await res.json();
+          console.log(data);
+          if (data.message) {
+            if (icon) {
+              icon.classList.replace('bi-bookmark', 'bi-bookmark-check-fill');
+            } else {
+              console.error('Icon element not found');
+            }
+          }
+        } catch (error) {
+          console.log(error);
         }
       };
       iconContainer.forEach((iconSave) => {

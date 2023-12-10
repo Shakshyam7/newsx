@@ -18,6 +18,7 @@ export const getNewsFromApi = async (req, res) => {
 };
 
 export const saveNews = async (req, res) => {
+  const userId = req.userId;
   const news = req.body;
   console.log(news);
   const q = `INSERT INTO news (title, description, imgUrl, userId) VALUE(?)`;
@@ -25,14 +26,14 @@ export const saveNews = async (req, res) => {
     req.body.title,
     req.body.description,
     req.body.imgUrl,
-    req.body.userId,
+    userId,
   ];
   db.query(q, [values], (err, data) => {
     if (err) {
       console.log(err);
-      return res.status(500).json('Error saving news');
+      return res.status(500).json({ error: 'Error saving news' });
     }
-    return res.status(200).json('News saved successfully');
+    return res.status(200).json({ message: 'News saved successfully' });
   });
 };
 
