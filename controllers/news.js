@@ -4,7 +4,7 @@ import db from '../connect.js';
 
 config();
 
-export const getNews = async (req, res) => {
+export const getNewsFromApi = async (req, res) => {
   let topic = req.query.topic || 'home';
   try {
     const response = await axios.get(
@@ -37,8 +37,7 @@ export const saveNews = async (req, res) => {
 };
 
 export const getSavedNews = (req, res) => {
-  const userId = req.query.userId;
-  // Assuming you're using a MySQL database
+  const userId = req.userid;
   const q = `SELECT * FROM news WHERE userId = ?`;
   db.query(q, [userId], (err, data) => {
     if (err) {
@@ -47,5 +46,26 @@ export const getSavedNews = (req, res) => {
     }
 
     res.status(200).json(data);
+  });
+};
+
+export const deleteSavedNews = async (req, res) => {
+  const userId = req.userId;
+  const newsId = req.params.id;
+  console.log(userId, newsId);
+
+  const q = `DELETE FROM news WHERE id = ? AND userId = ?`;
+
+  db.query(q, [newsId, userId], (err, data) => {
+    if (err) {
+      console.error('Error removing saved news:', err);
+      return res.status(500).json('Internal Server Error');
+    }
+    console.log(data);
+    if (data.affectedRows === 0) {
+      return res.status(200).json({ message: 'No news found' });
+    }
+
+    res.status(200).json({ message: 'News removed successfully' });
   });
 };

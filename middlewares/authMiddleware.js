@@ -10,6 +10,7 @@ const verifyToken = (req, res, next) => {
         res.redirect('/login');
       } else {
         console.log(decodedToken);
+        req.userId = decodedToken.id;
         next();
       }
     });
