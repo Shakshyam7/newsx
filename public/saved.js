@@ -69,6 +69,11 @@
                 alt="..."
               />`;
 
+        // Adds the delete icon to the card
+        const deleteIcon = document.createElement('div');
+        deleteIcon.innerHTML = `<button type="button" class="btn btn-outline-danger"><i class="bi bi-file-x-fill"></i></button>`;
+        deleteIcon.classList.add('deleteContainer');
+
         // creates a new div for the card body
         const cardBody = document.createElement('div');
         cardBody.classList.add('card-body');
@@ -76,6 +81,7 @@
               <h5 class="card-title fw-bold">${item.title}</h5>
               <p class="card-text mt-2">${item.description}</p>`;
 
+        cardElement.appendChild(deleteIcon);
         cardElement.appendChild(cardBody);
         newsElement.appendChild(cardElement);
       });

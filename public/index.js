@@ -109,7 +109,7 @@
         // Adds the save icon to the card
         const saveIcon = document.createElement('div');
         saveIcon.innerHTML = ' <i class="bi bi-bookmark mx-2 icon"></i>';
-        saveIcon.classList.add('save-icon');
+        saveIcon.classList.add('card-icon');
 
         // creates a new div for the card body
         const cardBody = document.createElement('div');
@@ -123,7 +123,7 @@
         newsElement.appendChild(cardElement);
       });
       // Save Functionality
-      let iconContainer = document.querySelectorAll('.save-icon');
+      let iconContainer = document.querySelectorAll('.card-icon');
       const handleSave = async (event) => {
         // Get data from the card element
         const cardElement = event.currentTarget.parentElement;
