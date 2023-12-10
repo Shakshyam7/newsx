@@ -15,3 +15,8 @@ export const getNews = async (req, res) => {
     console.log(error);
   }
 };
+
+export const saveNews = async (req, res) => {
+  const news = req.body;
+  console.log(req.body);
+};
