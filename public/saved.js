@@ -41,14 +41,11 @@
 
     async function getSavedNews() {
       try {
-        console.log(news.value);
         const response = await fetch(
-          `http://localhost:8000/api/news?topic=${news.value}`
+          `http://localhost:8000/api/news/saved_news`
         );
-        const res = await response.json();
-        const data = res.results;
+        const data = await response.json();
         console.log(data);
-        heading.textContent = news.value;
         updateCardNews(data);
       } catch (error) {
         console.error('Error fetching news:', error);
@@ -67,7 +64,7 @@
         // Adds the image to the card
         cardElement.innerHTML = `
           <img
-                src="${item.multimedia[1].url}"
+                src="${item.imgUrl}"
                 class="card-img-top card-img"
                 alt="..."
               />`;
@@ -77,31 +74,29 @@
         cardBody.classList.add('card-body');
         cardBody.innerHTML = `
               <h5 class="card-title fw-bold">${item.title}</h5>
-              <p class="card-text mt-2">${item.abstract}</p>`;
+              <p class="card-text mt-2">${item.description}</p>`;
 
         cardElement.appendChild(cardBody);
         newsElement.appendChild(cardElement);
       });
     }
-    getNews();
 
-    btn.addEventListener('click', getNews);
+    // Handle Logout
+    //variables
+    let logout = document.querySelector('.logout');
+
+    const handleLogout = async () => {
+      console.log('Logout button clicked');
+      localStorage.removeItem('user');
+      try {
+        const res = await fetch('/api/auth/logout');
+        console.log(res);
+        location.assign('/');
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getSavedNews();
+    logout.addEventListener('click', handleLogout);
   });
-
-  // Handle Logout
-  //variables
-  let logout = document.querySelector('.logout');
-
-  const handleLogout = async () => {
-    console.log('Logout button clicked');
-    localStorage.removeItem('user');
-    try {
-      const res = await fetch('/api/auth/logout');
-      console.log(res);
-      location.assign('/');
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  logout.addEventListener('click', handleLogout);
 })();

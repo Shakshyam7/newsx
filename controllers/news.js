@@ -38,12 +38,17 @@ export const saveNews = async (req, res) => {
 };
 
 export const getSavedNews = (req, res) => {
-  const userId = req.userid;
+  const userId = req.userId;
+  console.log(userId);
   const q = `SELECT * FROM news WHERE userId = ?`;
   db.query(q, [userId], (err, data) => {
     if (err) {
       console.error('Error fetching saved news:', err);
       return res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+    if (data.length == 0) {
+      res.status(200).json({ empty: 'You dont have any saved news' });
     }
 
     res.status(200).json(data);
