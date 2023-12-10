@@ -44,9 +44,9 @@
         const response = await fetch(
           `http://localhost:8000/api/news/saved_news`
         );
-        const data = await response.json();
-        console.log(data);
-        updateCardNews(data);
+        const savedNews = await response.json();
+        console.log(savedNews);
+        updateCardNews(savedNews);
       } catch (error) {
         console.error('Error fetching news:', error);
       }
@@ -70,9 +70,11 @@
               />`;
 
         // Adds the delete icon to the card
-        const deleteIcon = document.createElement('div');
-        deleteIcon.innerHTML = `<button type="button" class="btn btn-outline-danger"><i class="bi bi-file-x-fill"></i></button>`;
-        deleteIcon.classList.add('deleteContainer');
+        const deleteBtnContainer = document.createElement('div');
+
+        deleteBtnContainer.innerHTML = `<button type="button" class="btn btn-outline-danger" ><i class="bi bi-file-x-fill"></i></button>`;
+        deleteBtnContainer.classList.add('deleteContainer');
+        deleteBtnContainer.setAttribute('data-news-item-id', item.id);
 
         // creates a new div for the card body
         const cardBody = document.createElement('div');
@@ -81,9 +83,20 @@
               <h5 class="card-title fw-bold">${item.title}</h5>
               <p class="card-text mt-2">${item.description}</p>`;
 
-        cardElement.appendChild(deleteIcon);
+        cardElement.appendChild(deleteBtnContainer);
         cardElement.appendChild(cardBody);
         newsElement.appendChild(cardElement);
+      });
+
+      // Deletes the news
+      let deleteBtn = document.querySelectorAll('.deleteContainer');
+
+      const handleDelete = async (event) => {
+        const newsId = event.currentTarget.getAttribute('data-news-item-Id');
+        console.log(newsId);
+      };
+      deleteBtn.forEach((newsItem) => {
+        newsItem.addEventListener('click', handleDelete);
       });
     }
 

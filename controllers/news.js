@@ -65,7 +65,7 @@ export const deleteSavedNews = async (req, res) => {
   db.query(q, [newsId, userId], (err, data) => {
     if (err) {
       console.error('Error removing saved news:', err);
-      return res.status(500).json('Internal Server Error');
+      return res.status(500).json({error:'Internal Server Error'});
     }
     console.log(data);
     if (data.affectedRows === 0) {
