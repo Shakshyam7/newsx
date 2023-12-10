@@ -53,7 +53,7 @@ export const login = async (req, res) => {
     // sends the jwt as a cookie
     const accessToken = jwt.sign({ id: data[0].id }, process.env.SECRET_KEY);
     res.cookie('jwt', accessToken, { expiresIn: '7d', httpOnly: true });
-    res.status(200).json({ userData });
+    return res.status(200).json({ userData });
   });
 };
 
@@ -62,7 +62,7 @@ export const logout = (req, res) => {
   try {
     console.log(' Incoming logout req');
     res.clearCookie('jwt');
-    res.status(200).json({ user: null });
+    return res.status(200).json({ user: null });
   } catch (error) {
     console.log(error);
   }

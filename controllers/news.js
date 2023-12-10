@@ -11,7 +11,7 @@ export const getNewsFromApi = async (req, res) => {
       `https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=${process.env.API_KEY}`
     );
 
-    res.send(response.data);
+    return res.status(200).json(response.data);
   } catch (error) {
     console.log(error);
   }
@@ -48,10 +48,10 @@ export const getSavedNews = (req, res) => {
     }
 
     if (data.length == 0) {
-      res.status(200).json({ empty: 'You dont have any saved news' });
+      return res.status(200).json({ empty: 'You dont have any saved news' });
     }
 
-    res.status(200).json(data);
+    return res.status(200).json(data);
   });
 };
 
@@ -72,6 +72,6 @@ export const deleteSavedNews = async (req, res) => {
       return res.status(200).json({ message: 'No news found' });
     }
 
-    res.status(200).json({ message: 'News removed successfully' });
+    return res.status(200).json({ message: 'News removed successfully' });
   });
 };
