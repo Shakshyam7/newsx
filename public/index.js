@@ -95,28 +95,49 @@
 
       // loops through all the news from third element
       news.splice(3).forEach((item) => {
+        console.log(item, item.multimedia);
         const cardElement = document.createElement('div');
         cardElement.classList.add('card', 'px-0', 'my-3', 'my-md-0');
 
         // Appds the image to the card
         cardElement.innerHTML = `
         <img
-              src="${item.multimedia[1].url}"
-              class="card-img-top card-img"
-              alt="..."
-            />`;
+        src="${item.multimedia[1].url}"
+        class="card-img-top card-img"
+        alt="..."
+        />`;
+        // Adds the save icon to the card
+        const saveIcon = document.createElement('div');
+        saveIcon.innerHTML = ' <i class="bi bi-bookmark mx-2 icon"></i>';
+        saveIcon.classList.add('save-icon');
 
         // creates a new div for the card body
         const cardBody = document.createElement('div');
         cardBody.classList.add('card-body');
         cardBody.innerHTML = `
-            <h5 class="card-title fw-bold">${item.title}</h5>
-            <p class="card-text mt-2">${item.abstract}</p>`;
+        <h5 class="card-title fw-bold">${item.title}</h5>
+        <p class="card-text mt-2">${item.abstract}</p>`;
 
+        cardElement.appendChild(saveIcon);
         cardElement.appendChild(cardBody);
         newsElement.appendChild(cardElement);
       });
+      // Save Functionality
+      let iconContainer = document.querySelectorAll('.save-icon');
+      const handleSave = (event) => {
+        // Selects the icon of the selected save-icon class
+        let icon = event.currentTarget.querySelector('.icon');
+        if (icon.classList.contains('bi-bookmark')) {
+          icon.classList.replace('bi-bookmark', 'bi-bookmark-check-fill');
+        } else {
+          icon.classList.replace('bi-bookmark-check-fill', 'bi-bookmark');
+        }
+      };
+      iconContainer.forEach((iconSave) => {
+        iconSave.addEventListener('click', handleSave);
+      });
     }
+    getNews();
 
     // Handle Logout
     //variables
@@ -135,7 +156,6 @@
     };
 
     logout.addEventListener('click', handleLogout);
-    getNews();
     getUser();
   });
 })();

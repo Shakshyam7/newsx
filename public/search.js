@@ -87,4 +87,22 @@
 
     btn.addEventListener('click', getNews);
   });
+
+  // Handle Logout
+  //variables
+  let logout = document.querySelector('.logout');
+
+  const handleLogout = async () => {
+    console.log('Logout button clicked');
+    localStorage.removeItem('user');
+    try {
+      const res = await fetch('/api/auth/logout');
+      console.log(res);
+      location.assign('/');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  logout.addEventListener('click', handleLogout);
+  
 })();

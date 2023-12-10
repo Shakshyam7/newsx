@@ -88,29 +88,19 @@ header .profile .dropdown-content a {
   padding-bottom: 1rem;
   margin-bottom: 0;
 }
-.sidebar div .sidebar-li {
-  cursor: pointer;
-  transition: 0.3s ease;
-  overflow: hidden;
-  white-space: nowrap;
+
+.sidebar-li {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: wheat;
+  z-index: 999;
 }
-.sidebar div .sidebar-li:hover {
-  background-color: red !important;
-  border-radius: 12px !important;
+.sidebar-li div {
+  transition: 0.2s ease;
 }
-.sidebar div .active {
+.sidebar-li div:hover {
   background-color: #005165;
   border-radius: 12px;
-  transition: 0.3s ease;
-}
-
-.card {
-  background: #d1d5db;
-}
-.card h5 {
-  color: #002f3b;
 }
 
 .btn-custom {
@@ -121,6 +111,39 @@ header .profile .dropdown-content a {
 .btn-custom:hover {
   background-color: rgba(0, 47, 59, 0.8);
   color: rgba(255, 255, 255, 0.87);
+}
+
+.news-select {
+  width: 100%;
+}
+
+.card {
+  background: #d1d5db;
+}
+.card h5 {
+  color: #002f3b;
+}
+.card .save-icon {
+  width: 50px;
+  height: 50px;
+  align-self: flex-end;
+  margin: 0.5rem 0.5rem 0rem 0.5rem;
+  border-radius: 100%;
+  padding: 0.5rem;
+  bottom: 2px;
+  right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background: rgba(209, 213, 219, 0.8);
+}
+.card .save-icon .icon {
+  font-size: 24px;
+}
+.card .save-icon:hover {
+  background: rgba(0, 47, 59, 0.37);
 }
 
 @media screen and (min-width: 576px) {
@@ -140,7 +163,6 @@ main {
     height: 100vh;
     width: 25% !important;
     position: fixed;
-    z-index: 2;
   }
   header .logo {
     margin-top: 2rem;
@@ -155,7 +177,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0;
+    margin: 2rem 0;
     padding: 1rem;
     gap: 8px;
     cursor: pointer;
@@ -190,6 +212,9 @@ main {
     height: 75vh;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+  .news-select {
+    width: 15%;
   }
 }
 @media screen and (min-width: 992px) {
