@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`server listenning on port 8000`);
 });
