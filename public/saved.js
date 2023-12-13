@@ -42,6 +42,7 @@
         const response = await fetch(
           `http://localhost:8000/api/news/saved_news`
         );
+        console.log(response);
         const savedNews = await response.json();
         console.log(savedNews);
         if (savedNews.empty) {
