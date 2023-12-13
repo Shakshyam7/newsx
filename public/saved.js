@@ -2,9 +2,6 @@
 
 (() => {
   window.addEventListener('load', () => {
-    let news = document.getElementById('news');
-    let btn = document.querySelector('.btn-custom');
-    let heading = document.querySelector('.heading');
     //variables
     let hamMenu = document.querySelector('.hamburger');
     let profileName = document.querySelector('.profile-name');
@@ -40,15 +37,20 @@
     getUser();
 
     async function getSavedNews() {
+      const message = document.querySelector('.message');
       try {
         const response = await fetch(
           `http://localhost:8000/api/news/saved_news`
         );
         const savedNews = await response.json();
         console.log(savedNews);
+        if (savedNews.empty) {
+          message.textContent = savedNews.empty;
+          return;
+        }
         updateCardNews(savedNews);
       } catch (error) {
-        console.error('Error fetching news:', error);
+        console.log('Error fetching news:', error);
       }
     }
 

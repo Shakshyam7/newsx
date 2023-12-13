@@ -14,7 +14,7 @@ app.use(cors());
 app.use(cookieParser());
 
 const port = process.env.PORT || 8000;
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log(`server listenning on port 8000`);
 });
 
