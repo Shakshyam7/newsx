@@ -28,11 +28,12 @@
           },
         });
         const data = await res.json();
+        console.log(data);
         if (data.user) {
           alert(data.user);
           location.assign('/login');
         } else {
-          error.textContent = data;
+          error.textContent = data.error;
         }
       } catch (error) {
         console.log(error);

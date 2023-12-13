@@ -11,7 +11,8 @@ export const signUp = async (req, res) => {
   db.query(q, [req.body.email], (err, data) => {
     if (err) return res.status(500).json(err);
     // checks if the data is returned
-    else if (data.length) return res.status(409).json('Email already in use');
+    else if (data.length)
+      return res.status(409).json({ error: 'Email already in use' });
     else {
       // hash the password before saving to the db
       const salt = bcrypt.genSaltSync(10);
