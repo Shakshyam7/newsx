@@ -106,7 +106,6 @@
           });
           const data = await response.json();
           if (data.message) {
-            alert(data.message);
             return window.location.reload();
           } else {
             console.log(error);
@@ -132,6 +131,7 @@
         console.log(res);
         location.assign('/');
       } catch (error) {
+        xxxx;
         console.log(error);
       }
     };
