@@ -67,12 +67,16 @@
           carouselItem.classList.add('active');
         }
 
-        carouselItem.innerHTML = `
-        <img
-              src="${item.multimedia[0].url}"
-              class="d-block w-100"
-              alt="..."
-            />`;
+        const multimedia = item.multimedia;
+        if (multimedia && multimedia.length > 0) {
+          const imgUrl = multimedia[0].url;
+          carouselItem.innerHTML = `
+          <img
+                src="${imgUrl}"
+                class="d-block w-100"
+                alt="..."
+              />`;
+        }
 
         // creates a new div for the caption
         const caption = document.createElement('div');
