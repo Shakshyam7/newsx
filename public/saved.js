@@ -17,25 +17,6 @@
       }
     });
 
-    function getUser() {
-      const user = JSON.parse(localStorage.getItem('user'));
-      console.log(user);
-
-      if (user && user !== null) {
-        const login = document.querySelector('.login');
-        login.style.display = 'none';
-        const initial = user.name.split(' ');
-        profileName.textContent = user.name;
-        profileBg.textContent = initial[0][0] + initial[1][0];
-      } else {
-        const logout = document.querySelector('.logout');
-        logout.style.display = 'none';
-        profileName.textContent = 'Guest';
-        profileBg.textContent = 'G';
-      }
-    }
-    getUser();
-
     async function getSavedNews() {
       const message = document.querySelector('.message');
       try {
@@ -55,6 +36,25 @@
       }
     }
 
+    function getUser() {
+      const user = JSON.parse(localStorage.getItem('user'));
+      console.log(user);
+
+      if (user && user !== null) {
+        const login = document.querySelector('.login');
+        login.style.display = 'none';
+        const initial = user.name.split(' ');
+        profileName.textContent = user.name;
+        profileBg.textContent = initial[0][0] + initial[1][0];
+        getSavedNews();
+      } else {
+        const logout = document.querySelector('.logout');
+        logout.style.display = 'none';
+        profileName.textContent = 'Guest';
+        profileBg.textContent = 'G';
+        location.assign('/login');
+      }
+    }
     function updateCardNews(news) {
       const newsElement = document.querySelector('.latest-news');
       newsElement.innerHTML = '';
@@ -66,7 +66,7 @@
 
         // Adds the image to the card
         cardElement.innerHTML = `
-          <img
+        <img
                 src="${item.imgUrl}"
                 class="card-img-top card-img"
                 alt="..."
@@ -135,7 +135,7 @@
         console.log(error);
       }
     };
-    getSavedNews();
+    getUser();
     logout.addEventListener('click', handleLogout);
   });
 })();

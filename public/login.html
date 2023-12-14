@@ -47,8 +47,8 @@
         <div class="fs-1 text-center w-100 logo">NewsX</div>
 
         <div class="profile">
-          <span class="profile-name text-capitalize"></span
-          ><span class="profile-bg text-uppercase"></span>
+          <span class="profile-name text-capitalize">Guest</span
+          ><span class="profile-bg text-uppercase">G</span>
         </div>
       </div>
       <nav class="sidebar px-2">
@@ -73,11 +73,6 @@
               <i class="bi bi-box-arrow-in-right mx-2"></i> Login
             </div>
           </a>
-          <a href="#" class="sidebar-li logout">
-            <div class="p-2 my-3 my-lg-4">
-              <i class="bi bi-box-arrow-in-left mx-2"></i> Logout
-            </div>
-          </a>
         </div>
       </nav>
     </header>
@@ -94,6 +89,7 @@
               id="email"
               placeholder="haribahadur@example.com"
               required
+              autocomplete="email"
             />
             <label for="email">Email address</label>
           </div>
@@ -104,6 +100,7 @@
               id="password"
               placeholder="haribahadur@example.com"
               required
+              autocomplete="current-password"
             />
             <label for="email">Password</label>
             <button
@@ -128,7 +125,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="index.js"></script>
     <script type="module" src="login.js"></script>
   </body>
 </html>
