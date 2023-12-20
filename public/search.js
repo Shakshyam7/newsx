@@ -42,9 +42,7 @@
     async function getNews() {
       try {
         console.log(news.value);
-        const response = await fetch(
-          `http://localhost:8000/api/news?topic=${news.value}`
-        );
+        const response = await fetch(`/api/news?topic=${news.value}`);
         const res = await response.json();
         const data = res.results;
         console.log(data);
@@ -104,5 +102,4 @@
     }
   };
   logout.addEventListener('click', handleLogout);
-  
 })();
